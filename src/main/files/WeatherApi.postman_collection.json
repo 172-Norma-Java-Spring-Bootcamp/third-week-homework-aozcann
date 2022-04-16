@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "cb2b8603-6d61-4a27-8200-1c84638ba804",
+		"name": "WeatherApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "OpenWeatherMap-getCordinateByLocationName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.openweathermap.org/geo/1.0/direct?q=kıbrıs&limit=5&appid=991f46ddd982fce0b6128342fd51a371",
+					"protocol": "http",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"geo",
+						"1.0",
+						"direct"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "kıbrıs"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						},
+						{
+							"key": "appid",
+							"value": "991f46ddd982fce0b6128342fd51a371"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OpenWeatherMap-getWeatherForecastData",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/onecall?lat=39.9207886&lon=32.8540482&appid=991f46ddd982fce0b6128342fd51a371&units=metric",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"onecall"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "39.9207886"
+						},
+						{
+							"key": "lon",
+							"value": "32.8540482"
+						},
+						{
+							"key": "exclude",
+							"value": "daily.temp.day",
+							"disabled": true
+						},
+						{
+							"key": "appid",
+							"value": "991f46ddd982fce0b6128342fd51a371"
+						},
+						{
+							"key": "units",
+							"value": "metric"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getWeatherForecastByLocation",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"city\" : \"\",\r\n    \"country\" : \"EU\",\r\n    \"type\" : \"CURRENT\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/api/weather",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"weather"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
